@@ -1,0 +1,214 @@
+<app-navbar></app-navbar>
+<div class="row">
+    <main class="container" *ngIf="access == 1" style="margin-right: 15%">
+        <div class="left-column" style="margin-right: 15%">
+            <img data-image="red" class="active" style="
+          border-radius: 5%;
+          border: white solid;
+          margin-top: 10%;
+          box-shadow: 0 0 10px;
+        " src="{{ product.image }}" alt="" />
+        </div>
+
+        <div style="border-left: lightgrey solid; height: 650px; margin-right: 5%"></div>
+        <div class="right-column">
+            <div style="
+          font-size: 150%;
+          background-color: red;
+          margin-left: 50%;
+          margin-bottom: 5%;
+          width: 30%;
+          padding-left: 5%;
+        " *ngIf="product.Quantity <= 0">
+                <span style="color: white"> sold out</span>
+            </div>
+            <!-- Product Description -->
+            <div class="product-description">
+                <span>{{ product.category }}</span>
+                <h1>{{ product.name }}</h1>
+                <p>{{ product.description }}</p>
+            </div>
+
+            <!-- Product Configuration -->
+            <div class="product-configuration">
+                <!-- Product Color -->
+                <div class="product-color">
+                    <span class="product-description">Quantity</span>
+
+                    <div class="ml-auto">
+                        <button class="border rounded bg-white sign" (click)="raise()">
+              <span class="fa fa-plus" id="orange"></span>
+            </button>
+                        <span class="px-sm-1" style="font-size: 150%">{{ quantity }} load</span
+            >
+            <button class="border rounded bg-white sign" (click)="down()">
+              <span class="fa fa-minus" id="orange"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Pricing -->
+            <div class="product-price">
+                <span class="text-muted"> &#8362;{{ product.price }}</span>
+                <a class="cart-btn" style="font-size: 25px" (click)="addToCart()">Add to cart</a
+        >
+      </div>
+      <div style="margin-top: 15%; margin-left: 40%">
+        <img src="https://www.nizat.com/images/filters/4.jpg" width="100" />
+        <img src="https://www.nizat.com/images/filters/3.jpg" width="100" />
+      </div>
+      <div class="row">
+        <input
+          type="text"
+          name="command"
+          class="form-control"
+          style="margin-top: 5%; width: 40%; height: 50px"
+          [(ngModel)]="command"
+          placeholder="add commend"
+        /><input
+          type="submit"
+          class="btn"
+          value="submit"
+          (click)="submitCommand()"
+        />
+      </div>
+      <table class="table" *ngFor="let command of commands">
+        <tr>
+          <td style="font-size: 20px">#</td>
+          <td style="font-size: 20px">
+            {{ command.command }}<br /><span style="font-size: 20px"
+              ><span style="font-family: aharoni">Date</span>
+              {{ command.date }}</span
+            >
+          </td>
+        </tr>
+      </table>
+    </div>
+  </main>
+
+  <main class="container" *ngIf="access > 1">
+    <div class="left-column" style="margin-right: 15%">
+      <div class="form-wrap"></div>
+      <img
+        data-image="red"
+        class="active"
+        style="
+          border-radius: 5%;
+          border: white solid;
+          margin-top: 10%;
+          box-shadow: 0 0 10px;
+        "
+        src="{{ product.image }}"
+        alt=""
+      />
+    </div>
+    <div
+      style="border-left: lightgrey solid; height: 750px; margin-right: 5%"
+    ></div>
+    <div class="right-column">
+      <form class="w3-container">
+        <div class="product-description">
+          <label>Category</label>
+          <span>
+            <input
+              class="w3-input w3-animate-input"
+              type="text"
+              name="category"
+              style="width: 135px"
+              [(ngModel)]="product.category"
+              placeholder="{{ product.category }}" /></span
+          ><br />
+          <label>Name</label>
+          <h3>
+            <input
+              class="w3-input"
+              name="name"
+              type="text"
+              [(ngModel)]="product.name"
+              placeholder="{{ product.name }}"
+            />
+          </h3>
+          <br />
+          <label>image</label>
+          <a href="{{ product.image }}" target="_blank">
+            <input
+              class="w3-input"
+              type="text"
+              name="image"
+              [(ngModel)]="product.image"
+            />
+          </a>
+                <br />
+                <label>Description</label>
+                <p>
+                    <input class="w3-input" name="description" type="text" [(ngModel)]="product.description" placeholder="{{ product.description }}" />
+                </p>
+
+                <!-- Product Description -->
+            </div>
+
+            <!-- Product Pricing -->
+            <div class="product-price">
+                <label>Price</label>
+                <span class="text-muted">
+            <input
+              class="w3-input"
+              name="price"
+              type="number"
+              style="width: 45%"
+              [(ngModel)]="product.price"
+              placeholder="&#8362;{{ product.price }}"
+            />
+          </span>
+            </div>
+            <div class="product-price">
+                <label>Quantity</label>
+                <span class="text-muted">
+            <input
+              class="w3-input"
+              name="Quantity"
+              type="number"
+              style="width: 45%"
+              [(ngModel)]="product.Quantity"
+              placeholder="{{ product.Quantity }}"
+            />
+          </span>
+            </div>
+
+            <br />
+            <br />
+            <a href="#" class="cart-btn" style="font-size: 25px; width: 80%; margin-bottom: 5%" routerLink="/Natural-products">Cancel</a
+        >&nbsp;
+        <a
+          class="cart-btn"
+          style="font-size: 25px; width: 80%"
+          (click)="onSave()"
+          >Save</a
+        >
+      </form>
+    </div>
+  </main>
+  <div style="margin-right: 5%; margin-top: 7%">
+    <p>Recommended For You</p>
+    <marquee
+      class="news-scroll"
+      direction="down"
+      onmouseout="this.start();"
+      onmouseover="this.stop();"
+      style="height: 900px"
+    >
+      <ng-container
+        *ngFor="let product of orders"
+        style="margin-left: 80%; top: 50px"
+      >
+        <div style="margin-bottom: 15%">
+          <h3>{{ product.name }}</h3>
+          <a [routerLink]="['/product', product.SerialNumber]">
+            <img src="{{ product.image }}" width="200" />
+          </a>
+        </div>
+        </ng-container>
+        </marquee>
+</div>
+</div>

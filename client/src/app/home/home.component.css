@@ -1,0 +1,27 @@
+.navbar {
+    margin-bottom: 50px;
+    border-radius: 0;
+}
+
+.jumbotron {
+    margin-bottom: 0;
+}
+
+footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+}
+
+button {
+    border-radius: 30%;
+    margin-bottom: 10%;
+}
+
+.info {
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+}
+
+span {
+    font-size: 23px;
+}

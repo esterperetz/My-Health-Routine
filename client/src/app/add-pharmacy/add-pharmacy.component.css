@@ -1,0 +1,96 @@
+.wrapperr label {
+    background: #262626;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 24px;
+    padding: 16px 48px;
+}
+
+#chkBox {
+    display: none;
+}
+
+.mainContnt {
+    width: 100%;
+    height: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.7s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 50%;
+    height: 100%px;
+    transform: translateY(-1000px);
+    transition: all 2s;
+    margin: auto;
+    background: #fff;
+}
+
+.bx1 {
+    background-image: url(https://img.freepik.com/premium-vector/pharmacy-background-pharmacy-design-pharmacy-templates-medicine-pharmacy-hospital-set-drugs-with-labels-medication-pharmaceutics-concept-different-medical_203228-81.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.bx2 {
+    padding: 60px;
+}
+
+.bx2 h3 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.login-form input {
+    width: 100%;
+    height: 52px;
+    padding: 15px;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.login-form input[type="submit"] {
+    background: deepskyblue;
+    font-size: 25px;
+    text-transform: uppercase;
+    line-height: 20px;
+    color: #fff;
+}
+
+.close-box {
+    position: relative;
+    text-align: right;
+    color: #262626;
+    font-weight: bold;
+    margin-top: 64px;
+    margin-bottom: 32px;
+}
+
+.box-close {
+    position: absolute;
+    right: 5%;
+}
+
+#chkBox:checked+.mainContnt {
+    visibility: visible;
+    opacity: 1;
+}
+
+#chkBox:checked+.mainContnt .box {
+    transform: translateY(0);
+}

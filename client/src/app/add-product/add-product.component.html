@@ -1,0 +1,43 @@
+<div class="btn-area" *ngIf="managerAccess > 1">
+    <label for="chkBox" title="add product"><img src="https://img.icons8.com/ios-filled/50/000000/add--v1.png"
+  /></label>
+</div>
+
+<input type="checkbox" name="" id="chkBox" />
+<div class="mainContnt">
+    <div class="box">
+        <div class="boxes bx1"></div>
+
+        <div class="boxes bx2">
+            <label for="chkBox" class="box-close">X</label>
+            <h3>Add product</h3>
+            <form class="login-form" #product="ngForm" (ngSubmit)="onSubmit(product)">
+                <input type="text" placeholder="Enter Your Name.." ngModel name="name" id="name" required />
+                <input type="number" placeholder="Enter Your Quantity.." ngModel name="Quantity" id="Quantity" required />
+                <input type="number" placeholder="Enter Your Price.." ngModel name="price" id="price" required />
+                <input type="text" placeholder="Enter Your Image.." ngModel name="image" id="image" required />
+
+                <select style="
+            padding: 10px;
+            background: #edf2ff;
+            border: none;
+            font-size: 25px;
+          " (change)="getCategory($event)">
+          <option value="">-- Select category --</option>
+          <option value="Vitamins">Vitamins</option>
+          <option value="Food Additives">Food Additives</option>
+          <option value="Probiotics">Probiotics</option>
+        </select>
+                <br /><br />
+                <button type="submit " class="btn btn-outline-primary" style="
+            border: #92b3ff solid;
+            color: #080710;
+            width: 100%;
+            font-size: 20px;
+          ">
+          Submit
+        </button>
+            </form>
+        </div>
+    </div>
+</div>

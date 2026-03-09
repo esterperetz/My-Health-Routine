@@ -1,0 +1,253 @@
+label {
+    font-size: 150%;
+    font-weight: bolder;
+}
+
+.header {
+    width: 40%;
+    margin: 50px auto 0px;
+    color: white;
+    background: #5f9ea0;
+    text-align: center;
+    border: 1px solid #b0c4de;
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+    padding: 20px;
+}
+
+form,
+.content {
+    width: 40%;
+    margin: 0px auto;
+    padding: 20px;
+    border: 1px solid #b0c4de;
+    background: white;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.input-group {
+    margin: 10px 0px 10px 0px;
+}
+
+
+/* .input-group label {
+    display: block;
+    text-align: left;
+    margin: 3px;
+} */
+
+.input-group input {
+    height: 30px;
+    width: 93%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+#user_type {
+    height: 40px;
+    width: 98%;
+    padding: 5px 10px;
+    background: white;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.btn {
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    background: #5f9ea0;
+    border: none;
+    border-radius: 5px;
+}
+
+.error {
+    width: 92%;
+    margin: 0px auto;
+    padding: 10px;
+    border: 1px solid #a94442;
+    color: #a94442;
+    background: #f2dede;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.success {
+    color: #3c763d;
+    background: #dff0d8;
+    border: 1px solid #3c763d;
+    margin-bottom: 20px;
+}
+
+.profile_info img {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+.profile_info div {
+    display: inline-block;
+    margin: 5px;
+}
+
+.profile_info:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/* question mark */
+
+.help-tip {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    text-align: center;
+    background-color: #bcdbea;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 26px;
+    cursor: default;
+}
+
+.help-tip:before {
+    content: "?";
+    font-weight: bold;
+    color: #fff;
+}
+
+.help-tip:hover p {
+    display: block;
+    transform-origin: 100% 0%;
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.help-tip p {
+    /* The tooltip */
+    display: none;
+    text-align: left;
+    background-color: #1e2021;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    right: -4px;
+    color: #fff;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.help-tip p:before {
+    /* The pointer of the tooltip */
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-bottom-color: #1e2021;
+    right: 10px;
+    top: -12px;
+}
+
+.help-tip p:after {
+    /* Prevents the tooltip from being hidden */
+    width: 100%;
+    height: 40px;
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0;
+}
+
+
+/* CSS animation */
+
+
+/* @-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    100% {
+        opacity: 100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+} */
+
+
+/*///////*/
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+}
+
+
+/* //// */
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300);
+html {
+    box-sizing: border-box;
+}
+
+
+/* BODY */
+
+body {
+    position: relative;
+    color: #666;
+    font: 16px/26px "Raleway", sans-serif;
+    text-align: center;
+    height: 100%;
+    background: -moz-linear-gradient( 270deg, rgba(34, 46, 64, 1) 0%, rgba(81, 195, 184, 1) 100%);
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0%, rgba(34, 46, 64, 1)), color-stop(100%, rgba(81, 195, 184, 1)));
+    background: -webkit-linear-gradient( 270deg, rgba(34, 46, 64, 1) 0%, rgba(81, 195, 184, 1) 100%);
+    background: linear-gradient( 180deg, rgba(34, 46, 64, 1) 0%, rgba(81, 195, 184, 1) 100%);
+    overflow: hidden;
+}
+
+
+/* BUTTON */
+
+#text1 {
+    font-size: 27px;
+    font-family: "Roboto Slab", serif;
+    position: relative;
+    top: -82px;
+    left: 18%;
+    color: gray;
+}
+
+#check {
+    position: relative;
+    right: 480px;
+    top: -50px;
+}
+
+.right {
+    margin-right: 80%;
+}

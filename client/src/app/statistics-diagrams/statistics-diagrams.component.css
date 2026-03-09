@@ -1,0 +1,15 @@
+#divChart {
+    display: block;
+    width: 50%;
+    height: 400px;
+    margin-left: 20%;
+    margin-top: 5%;
+    margin-bottom: 20%;
+}
+
+#text {
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    margin-top: 10%;
+    margin-right: 5%;
+}

@@ -1,0 +1,166 @@
+<app-navbar></app-navbar>
+
+<body>
+    <div class="header">
+        <h2>Enter Your Medicne</h2>
+    </div>
+
+    <form #medicneUser="ngForm" (ngSubmit)="onSubmit(medicneUser)">
+        <div class="input-group">
+            <label>Medicne Name:&nbsp;&nbsp;</label>
+
+            <div class="search-hero">
+                <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Start searching for a Medicne" style="width: 40%" />
+            </div>
+            <br />
+            <div *ngIf="managerAccess > 1">
+                <app-medicines-database></app-medicines-database>
+            </div>
+            <div class="dropdown-container">
+                <select name="cars" id="cars" (change)="getCategory($event)">
+          <option
+            *ngFor="let med of medicnes | filter: searchText"
+            value="{{ med.nameMed }}"
+            style="width: 30%"
+          >
+            {{ med.nameMed }} {{ med.size }} MG
+          </option>
+        </select>
+            </div>
+        </div>
+        <br />
+
+        <div class="input-group">
+            <div class="help-tip" style="margin-right: 50%; margin-top: -2%">
+                <p>Antibiotics 500Mg</p>
+            </div>
+            <label>Quantity(milligram):</label>&nbsp;&nbsp;
+
+            <input type="number" id="MgQuantity" name="MgQuantity" min="0" max="100" step="5" value="30" style="width: 10%" required ngModel />
+        </div>
+        <br />
+        <div class="input-group">
+            <div class="help-tip" style="margin-right: 75%; margin-top: -1%">
+                <p>you can choםse more then one</p>
+            </div>
+            <label>Taking Time:</label>
+            <!-- <div style="border: solid"> -->
+
+            <!-- open clock morning -->
+            <label class="chat-btn" style="margin-right: 85%">
+        <input
+          type="checkbox"
+          ngModel
+          name="Morning"
+          value="Morning"
+          style="width: 15%"
+          (click)="OpenM()"
+        />&nbsp;&nbsp;Morning</label
+      >
+      <ng-container *ngIf="openM">
+        <div>
+          <input
+            ngModel
+            type="time"
+            name="alartM"
+            min="05:00"
+            max="12:00"
+            style="width: 20%"
+          />&nbsp;&nbsp;
+
+          <div>
+            <label for="appt-time" style="font-size: 20px"
+              >Morning (05:00 to 12:00):
+            </label>
+        </div>
+        </div>
+        </ng-container>
+        <!-- clock noon -->
+        <label class="chat-btn" style="margin-right: 88%">
+        <input
+          type="checkbox"
+          ngModel
+          name="Noon"
+          value="Noon"
+          style="width: 18%"
+          (click)="OpenN()"
+        />&nbsp;&nbsp;Noon</label
+      >
+      <ng-container *ngIf="openN">
+        <div>
+          <input
+            ngModel
+            type="time"
+            name="alartN"
+            min="13:00"
+            max="18:00"
+            style="width: 20%"
+          />&nbsp;&nbsp;
+
+          <div>
+            <label for="appt-time" style="font-size: 20px"
+              >Noon (13:00 to 18:00):
+            </label>
+        </div>
+        </div>
+        </ng-container>
+
+        <!-- open clock Evening-->
+        <label class="chat-btn" style="margin-right: 85%">
+        <input
+          type="checkbox"
+          ngModel
+          name="Evening"
+          value="Evening"
+          style="width: 15%"
+          (click)="OpenE()"
+        />&nbsp;&nbsp;Evening</label
+      >
+      <ng-container *ngIf="openE">
+        <div>
+          <input
+            ngModel
+            type="time"
+            name="alartE"
+            style="width: 20%"
+            min="19:00"
+            max="00:00"
+          />&nbsp;&nbsp;
+
+          <div>
+            <label for="appt-time" style="font-size: 20px"
+              >Evening (19:00 to 00:00):
+            </label>
+        </div>
+        </div>
+        </ng-container>
+        </div>
+        <div class="input-group">
+            <label>Amount of pills (for one day): </label>&nbsp;&nbsp;
+            <div class="help-tip" style="margin-right: 46%; margin-top: -2%">
+                <p>Twice a day 2 pills in one take</p>
+            </div>
+            <br />
+            <input type="number" ngModel id="AmountOfPills" name="AmountOfPills" min="0" max="100" step="1" value="0" style="width: 10%" required />
+        </div>
+        <br />
+
+        <div class="input-group">
+            <label>For period of time:(days) &nbsp;&nbsp;</label>
+            <input type="number" ngModel id="ForHowLong" name="ForHowLong" min="0" max="100" step="1" value="0" style="width: 10%" required />
+            <div class="help-tip" style="margin-right: 50%; margin-top: -2%">
+                <p>treatment for 2 week (write 14 days)</p>
+            </div>
+        </div>
+        <div class="input-group">
+            <label>Start day time: &nbsp;&nbsp;</label>
+            <input type="date" ngModel id="StartDay" name="StartDay" style="width: 20%" required />
+        </div>
+
+        <div class="input-group">
+            <button type="submit" class="btn" name="register_btn" style="font-size: 20px">
+        Submit
+      </button>
+        </div>
+    </form>
+</body>

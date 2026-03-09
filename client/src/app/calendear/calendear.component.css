@@ -1,0 +1,268 @@
+.clearfix::after,
+.calendar ol::after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+/* ================
+Calendar Styling */
+
+.calendar {
+    border-radius: 10px;
+}
+
+.month {
+    font-size: 2rem;
+}
+
+@media (min-width: 992px) {
+    .month {
+        font-size: 3.5rem;
+    }
+}
+
+.calendar ol li {
+    float: left;
+    width: 14.28571%;
+}
+
+.calendar thead {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.calendar .day-names {
+    border-bottom: 1px solid #eee;
+}
+
+.calendar .day-names li {
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.calendar .days li {
+    border-bottom: 1px solid #eee;
+    min-height: 8rem;
+}
+
+.calendar .days li .date {
+    margin: 0.5rem 0;
+}
+
+.calendar .days li .event {
+    font-size: 0.75rem;
+    padding: 0.4rem;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 4rem;
+    margin-bottom: 1px;
+}
+
+.calendar .days li .event.span-2 {
+    width: 200%;
+}
+
+.calendar .days li .event.begin {
+    border-radius: 1rem 0 0 1rem;
+}
+
+.calendar .days li .event.end {
+    border-radius: 0 1rem 1rem 0;
+}
+
+.calendar .days li .event.clear {
+    background: none;
+}
+
+.calendar .days li:nth-child(n + 29) {
+    border-bottom: none;
+}
+
+.calendar .days li.outside .date {
+    color: #ddd;
+}
+
+.li:hover {
+    background-color: #00addf;
+    opacity: 0.5;
+}
+
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+
+body {
+    min-height: 100vh;
+    background-color: #3ca55c;
+    /* background-image: linear-gradient(147deg, #3ca55c 0%, #b5ac49 100%); */
+    background-image: url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGYtbWlzY3RleHR1cmUwMS1iZWVyLTAwMF81LmpwZw.jpg?s=HsmcUASyIhByOR7WVG7d5Bb0Sbc2LRpOGn1Wlh8gxgA");
+    background-size: cover;
+}
+
+
+/****/
+
+body {
+    color: #fff;
+    overflow-x: hidden;
+    height: 100%;
+    background-image: linear-gradient(#81d4fa, #2196f3);
+    background-repeat: no-repeat;
+}
+
+.card0 {
+    width: 94%;
+}
+
+.card1 {
+    background-image: linear-gradient(#2196f3, #81d4fa);
+    padding: 30px 20px 30px 50px;
+}
+
+.image {
+    width: 300px;
+    height: 300px;
+}
+
+.large-font {
+    font-size: 70px;
+    font-family: Arial;
+}
+
+.fa-sun-o {
+    font-size: 22px;
+}
+
+.card2 {
+    background-color: #607d8b;
+    padding: 0px 0px 40px 40px;
+}
+
+input {
+    background-color: #607d8b;
+    padding: 24px 0px 12px 0px !important;
+    width: 80%;
+    box-sizing: border-box;
+    border: none !important;
+    border-bottom: 1px solid #cfd8dc !important;
+    font-size: 20px !important;
+    color: #fff !important;
+}
+
+input:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #fff !important;
+    outline-width: 0;
+    font-weight: 400;
+}
+
+::placeholder {
+    color: #b0bec5 !important;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: #b0bec5 !important;
+}
+
+::-ms-input-placeholder {
+    color: #b0bec5 !important;
+}
+
+.fa-search {
+    color: #607d8b;
+    background-color: #e1f5fe;
+    font-size: 20px;
+    padding: 20px;
+    width: 20%;
+    cursor: pointer;
+}
+
+.light-text {
+    color: #b0bec5;
+}
+
+.suggestion:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.line {
+    height: 1px;
+    background-color: #b0bec5;
+}
+
+@media screen and (max-width: 500px) {
+    .card1 {
+        padding-left: 26px;
+    }
+}
+
+p {
+    font-size: 23px;
+    font-weight: bold;
+    font-family: Book Antiqua;
+    margin-top: 2%;
+}
+
+span {
+    font-weight: bolder;
+    font-size: 27px;
+    font-family: Book Antiqua;
+    color: white;
+}
+
+.chat-btn {
+    right: 14px;
+    bottom: 30px;
+}
+
+.chat-btn .close {
+    display: none;
+}
+
+.chat-btn i {
+    transition: all 0.9s ease;
+}
+
+.chat-btn i {
+    font-size: 22px;
+    color: #fff !important;
+}
+
+.chat-btn {
+    /* width: 50px; */
+    /* height: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 50px; */
+    color: white;
+    font-size: 22px;
+    border: none;
+}
+
+#check:checked~.wrapper1 {
+    height: auto;
+    margin-bottom: 5%;
+    opacity: 1;
+}
+
+#check:checked~.wrapper {
+    height: auto;
+    margin-bottom: 5%;
+    opacity: 1;
+}

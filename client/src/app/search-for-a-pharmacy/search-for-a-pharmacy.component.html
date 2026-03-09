@@ -1,0 +1,103 @@
+<app-navbar></app-navbar>
+
+<img src="https://www.principle-pharmacy.com/wp-content/uploads/2020/11/Untitled-11.jpg" style="
+    max-height: 600px;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 5%;
+    filter: blur(2px);
+  " />
+<header class="w3-display-container w3-wide" id="home" style="margin-left: 38%; bottom: 400px">
+    <div>
+        <h1 style="font-weight: bold; font-size: 120px">Pharmacies</h1>
+    </div>
+</header>
+
+<body>
+    <form class="w3-container" style="margin-left: 37%; margin-top: 2%" #search="ngForm" (ngSubmit)="getPharmacy(search)">
+        <div class="row">
+            <button style="
+          background-color: white;
+          height: 5%;
+          margin-top: 5%;
+          border: none;
+        " type="submit">
+        <i
+          class="fa fa-search"
+          type="submit"
+          style="font-size: 30px; margin-top: 5%"
+        ></i>
+      </button>
+            <input class="w3-input" style="width: 30%; height: 15%; margin-top: 5%; font-size: 30px" name="searchCity" ngModel placeholder="Find Pharmacy Nearby" />
+            <i class="fa fa-map-marker" style="font-size: 75px; margin-top: 3%"></i>
+        </div>
+    </form>
+
+    <!-- popup -->
+
+    <!-- pharmacy list -->
+    <!-- *ngIf="!pharmacyDetails[0].namePharmacy" -->
+    <ng-container *ngFor="let pharmacy of pharmacies">
+        <ng-container *ngIf="!falg">
+            <div style="margin-left: 25%; margin-top: 3%">
+                <h1 style="font-family: aharoni; font-size: 40px">
+                    {{ pharmacy.namePharmacy }}
+                </h1>
+                <div style="margin-left: 3%">
+                    <h1>Tel: {{ pharmacy.phone }}</h1>
+                    <br />
+                    <h1 style="font-family: 'Courier New', Courier, monospace">
+                        More details:
+                    </h1>
+                    <h1>Address:</h1>
+                    <h1>
+                        {{ pharmacy.address.citiy }} {{ pharmacy.address.street }}, {{ pharmacy.address.numberStreet }}
+                    </h1>
+                    <h1>Store hours:</h1>
+                    <h2>{{ pharmacy.openingDescription }}</h2>
+                </div>
+            </div>
+
+            <!-- style="border: solid; margin-left: 25%; padding: 5%" -->
+
+            <hr class="hrline" />
+        </ng-container>
+    </ng-container>
+
+    <!-- pharmacy -->
+    <!-- *ngIf="pharmacyDetails[0].namePharmacy" -->
+    <ng-container *ngIf="falg">
+        <ng-container *ngFor="let pharmacyDetails of pharmacyDetails">
+            <div style="margin-left: 25%; margin-top: 5%" *ngIf="pharmacyDetails.namePharmacy">
+                <h1 style="font-family: aharoni; font-size: 40px">
+                    {{ pharmacyDetails.namePharmacy }}
+                </h1>
+                <h1>tel: {{ pharmacyDetails.phone }}</h1>
+                <h1 style="font-family: 'Courier New', Courier, monospace">
+                    More details:
+                </h1>
+            </div>
+            <input type="checkbox" id="check" style="border-bottom: solid" *ngIf="pharmacyDetails.namePharmacy" />
+            <label class="chat-btn" for="check" style="margin-left: 65%" *ngIf="pharmacyDetails.namePharmacy">
+        <i class="fa fa-plus comment"></i>
+        <i class="fa fa-close close"></i>
+      </label>
+            <!-- style="border: solid; margin-left: 25%; padding: 5%" -->
+            <div class="wrapper">
+                <div class="header">
+                    <h1>Address:</h1>
+                    <h1>
+                        {{ pharmacyDetails.address.citiy }} {{ pharmacyDetails.address.street }}, {{ pharmacyDetails.address.numberStreet }}
+                    </h1>
+                    <h1>Store hours:</h1>
+                    <h2>{{ pharmacyDetails.openingDescription }}</h2>
+                </div>
+            </div>
+
+            <hr class="hrline" />
+        </ng-container>
+    </ng-container>
+</body>
+<div style="position: sticky; bottom: 0">
+    <app-add-pharmacy></app-add-pharmacy>
+</div>

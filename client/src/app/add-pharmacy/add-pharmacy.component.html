@@ -1,0 +1,40 @@
+<ng-container style="margin-bottom: 25%">
+    <div *ngIf="managerAccess > 1">
+        <label for="chkBox" title="add product"><img
+        src="https://img.icons8.com/ios-filled/50/000000/add--v1.png"
+      /><span style="font-size: 25px"> Add pharmacy</span>
+    </label>
+    </div>
+
+    <input type="checkbox" name="" id="chkBox" />
+    <div class="mainContnt">
+        <div class="box">
+            <div class="boxes bx1"></div>
+
+            <div class="boxes bx2">
+                <label for="chkBox" class="box-close">X</label>
+                <h3>Add pharmacy</h3>
+                <form class="login-form" #pharmacy="ngForm" (ngSubmit)="onSubmit(pharmacy)">
+                    <input type="text" placeholder="Enter Pharmacy Name .." ngModel name="namePharmacy" id="namePharmacy" required />
+                    <label>address</label>
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="text" placeholder="Enter citiy.." ngModel name="citiy" id="citiy" required />
+                        </div>
+
+                        <div class="col-6">
+                            <input type="text" placeholder="Enter street .." ngModel name="street" id="street" required />
+                        </div>
+                    </div>
+                    <input type="text" style="width: 48%" placeholder="Enter street number .." ngModel name="streetNumber" id="streetNumber" required />
+                    <input type="number" placeholder="Enter Phone.." ngModel name="phone" id="phone" required />
+                    <input type="number" placeholder="Enter Store hours .." ngModel name="openingDescription" id="openingDescription" required />
+                    <br /><br />
+                    <button type="submit " class="btn btn-outline-primary" style="border: #92b3ff solid; color: #080710; width: 100%">
+            submit
+          </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-container>

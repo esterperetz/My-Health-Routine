@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+
+    <div class="w3-top" style="padding-left: 10%; padding-right: 10%; height: 15%">
+        <br />
+        <div class="w3-bar w3-white w5-padding w3-card" style="letter-spacing: 3%; height: 50%">
+            <br />
+            <a class="w3-bar-item w3-button" style="font-size: 30px; font-family: Forte" routerLink="/home">My Healthy Routine</a
+      >
+
+      <div class="w3-right w2-hide-small div height">
+        <!-- <a class="w3-bar-item w3-button" style="font-size: 20px">About</a> -->
+            <!-- <a class="w3-bar-item w3-button" style="font-size: 20px">Menu</a> -->
+
+            <a class="w3-bar-item w3-button" routerLink="/Cart" style="font-size: 20px" routerLink="/cart"><span
+            class="glyphicon glyphicon-shopping-cart"
+            routerLink="/cart"
+          ></span>
+          Cart
+          <span
+            style="
+              border-radius: 50%;
+              background-color: red;
+              color: white;
+              border: red solid;
+            "
+            >{{ len }}</span
+          >
+        </a>
+
+            <a class="w3-bar-item w3-button" routerLink="/userInfo" style="font-size: 20px"><span class="glyphicon glyphicon-user"></span> Your Account</a
+        >
+        <a
+          class="w3-bar-item w3-button"
+          routerLink="/Statistics"
+          style="font-size: 20px"
+          *ngIf="access == 3"
+          ><span class="glyphicon glyphicon-user"></span>Statistics
+        </a>
+
+            <a class="w3-bar-item w3-button" routerLink="/order" style="font-size: 20px"><span></span>orders</a
+        >
+        <!--*ngIf="flagLogInOut"
+          else -->
+        <a
+          class="w3-bar-item w3-button"
+          routerLink="/login"
+          style="font-size: 20px"
+          *ngIf="!UserService.loggedIn()"
+        >
+          <img src="https://img.icons8.com/nolan/32/login-rounded-right.png" />
+          <span>login</span>
+        </a>
+            <a class="w3-bar-item w3-button" style="font-size: 20px" *ngIf="!UserService.loggedIn()" routerLink="/register">
+                <img src="https://img.icons8.com/nolan/32/login-rounded-right.png" />
+                <span>register</span>
+            </a>
+            <a class="w3-bar-item w3-button" style="font-size: 20px" *ngIf="UserService.loggedIn()" (click)="UserService.loggOut()">
+                <img src="https://img.icons8.com/external-filled-line-kendis-lasman/24/000000/external-logout-user-interface-filled-line-filled-line-kendis-lasman.png" />
+                <span>logout</span>
+            </a>
+
+            <a class="w3-bar-item w3-button" href="#" routerLink="/userInfo">
+                <img src="{{ userImage }}" class="rounded-circle" width="55" />
+            </a>
+        </div>
+    </div>
+    </div>
+</nav>

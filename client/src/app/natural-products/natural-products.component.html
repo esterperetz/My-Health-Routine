@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<body style="background-color: rgb(237, 240, 244)">
+    <br /><br /><br />
+    <img src="{{ img }}" style="width: 60%; height: 40%; margin-left: 20%" />
+
+    <br /><br /><br /><br /><br />
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom" style="width: 80%; margin-left: 10%">
+        <img src="https://img.icons8.com/office/30/000000/shop.png" />
+
+        <a class="navbar-brand ml-2 font-weight-bold" href="#" style="font-size: 300%"><span id="burgundy">Natural</span><span id="orange">Shop</span></a
+    >
+
+    <!-- need to make only manger to see that -->
+    <app-add-product></app-add-product>
+  </nav>
+  <div class="row" style="height: 1000px">
+    <div class="col-3">
+      <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="col-6">
+      <app-products [categoryName]="sidelist?.categoryName"></app-products>
+    </div>
+
+    <div style="margin-left: 5%"></div>
+  </div>
+</body>
+<div style="margin-top: 20%">
+  <app-footer></app-footer>
+</div>

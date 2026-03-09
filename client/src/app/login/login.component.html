@@ -1,0 +1,71 @@
+<body>
+    <div id="container">
+        <div id="formcontainer">
+            <form #login="ngForm" (ngSubmit)="onSubmit(login)">
+                <p id="text">Login to your Account</p>
+                <input id="email" type="email" name="email" type="tel" ngModel placeholder="Email" />
+                <input id="password" type="password" name="password" ngModel placeholder="Password" />
+                <a id="forget" routerLink="/forget-password">Forget Password ?</a>
+                <button id="login" type="submit">Log In</button>
+                <hr id="hrline1" />
+                <p id="text2">Not a Member?</p>
+                <hr id="hrline2" />
+                <button id="signup" type="submit" routerLink="/register">
+          Sign In
+        </button>
+                <p id="text3"></p>
+            </form>
+        </div>
+    </div>
+</body>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Glassmorphism login Form Tutorial in html css</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <br /><br /><br /><br /><br /><br /><br /><br />
+    <form style="border: solid #19a3c6; padding-top: 0.5%" #login="ngForm" (ngSubmit)="onSubmit(login)">
+        <div style="border: #1845ad">
+            <a style="
+            margin-right: 40%;
+            font-size: 150%;
+            color: white;
+            text-decoration-line: underline;
+            text-decoration-color: rgba(81, 195, 184, 1);
+          " class="sign-up active">Log In</a
+        >
+        <a style="font-size: 150%" routerLink="/register">Sign Up</a>
+        </div>
+        <hr style="width: 50%" />
+
+        <label for="username">Username</label>
+        <input type="text" style="border-bottom: 1px solid #5a6374" placeholder="Email" ngModel name="email" id="username " />
+        <hr style="border: 5% solid" />
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" ngModel name="password" />
+        <hr style="border: 5% solid" />
+        <button type="submit " class="btn btn-outline-primary" style="border: #92b3ff solid; color: #080710">
+        submit
+      </button>
+        <br /><br />
+        <div class="help-action">
+            <p>
+                <a href="# ">Forgot your password?</a>
+            </p>
+        </div>
+    </form>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</body>
+
+</html>
+ -->

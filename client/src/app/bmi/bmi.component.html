@@ -1,0 +1,16 @@
+<!-- //add -->
+<div class="container">
+    <h2 style="text-align: center; font-family: Forte">BMI Calculator</h2>
+    <div class="display">
+        <p id="result">{{ result }}</p>
+        <p id="category">{{ meesage }}</p>
+    </div>
+    <div class="row">
+        <input type="range" min="20" max="200" value="20" id="weight" (change)="getSliderValue($event)" (oninput)="getSliderValue($event)" />
+        <span id="weight-val">{{ weight }} KG</span>
+    </div>
+    <div class="row">
+        <input type="range" min="100" max="200" value="100" id="height" (change)="getSliderHeight($event)" (oninput)="getSliderHeight($event)" />
+        <span>{{ height }} cm</span>
+    </div>
+</div>

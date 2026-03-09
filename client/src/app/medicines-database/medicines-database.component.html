@@ -1,0 +1,122 @@
+<ng-container style="margin-bottom: 25%">
+    <div>
+        <label for="chkBox" title="add product">
+      <a style="font-size: 20px; color: #3279a8">
+        <span class="fa fa-plus" id="orange"></span>&nbsp; Medicines database</a
+      >
+    </label>
+    </div>
+
+    <input type="checkbox" name="" id="chkBox" />
+    <div class="mainContnt">
+        <div class="box">
+            <div class="boxes bx2">
+                <form class="login-form" #addMed="ngForm" (ngSubmit)="addMedicne(addMed)">
+                    <span style="font-size: 25px; text-align: center">Add/Update medicine</span
+          >
+          <input
+            type="text"
+            placeholder="Enter Medicine Name.."
+            ngModel
+            name="MedicneName"
+            id="MedicneName"
+            [(ngModel)]="MedicneName"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Enter Mg Quantity.."
+            ngModel
+            name="MgQuantity"
+            id="MgQuantity"
+            required
+          />
+
+          <label>Doctor's Recommendation</label>
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="text"
+                placeholder="For period of time.."
+                ngModel
+                name="ForHowLong"
+                id="ForHowLong"
+                required
+              />
+            </div>
+
+            <div class="col-6">
+              <input
+                type="text"
+                placeholder="Amount of pills (for one day): .."
+                ngModel
+                name="AmountOfPills"
+                id="AmountOfPills"
+                required
+              />
+            </div>
+          </div>
+          <br /><br />
+          <div class="row">
+            <div class="col-6">
+              <button
+                type="submit"
+                class="btn btn-outline-primary"
+                style="border: #92b3ff solid; color: #080710; width: 100%"
+              >
+                add
+              </button>
+            </div>
+            <div class="col-6">
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                (click)="update(addMed)"
+                style="border: #92b3ff solid; color: #080710; width: 100%"
+              >
+                update
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="boxes bx2 scroll">
+        <label for="chkBox" class="box-close">X</label>
+        <div class="search-hero">
+          <input
+            class="form-control"
+            type="text"
+            name="search"
+            [(ngModel)]="MedicneName"
+            autocomplete="off"
+            placeholder="searching Medicne"
+            style="width: 45%; height: 50px"
+          />
+          &nbsp;&nbsp;&nbsp;
+        </div>
+        <table class="table">
+          <tr>
+            <th>Med name</th>
+            <th>Amount Of Pills</th>
+            <th>For How Long (by Days)</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let med of medicnes | filter: MedicneName">
+            <td>{{ med.nameMed }} {{ med.size }} MG</td>
+            <td>{{ med.takingRecommend.AmountOfPills }}</td>
+            <td>{{ med.takingRecommend.ForHowLong }}</td>
+            <td>
+              <a
+                style="color: #3279a8; text-decoration: underline"
+                (click)="deleteMed(med._id)"
+                >delete</a
+              >
+              <!-- <img (click)="deleteMed(med._id)" class="img" style="width: 10%; height: 10%" src="https://img.icons8.com/office/30/000000/cancel.png" /> -->
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>

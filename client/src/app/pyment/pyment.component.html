@@ -1,0 +1,109 @@
+<div class="container-fluid" id="grad1">
+    <div class="row justify-content-center mt-0">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                <h2><strong>Pyment</strong></h2>
+                <p>Fill all form field to go to next step</p>
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form id="msform">
+                            <!-- progressbar -->
+                            <ul class="progressbar">
+                                <li [ngClass]="{ active: nameOfCategory == 'Cart Shop' }" class="active" id="account">
+                                    <strong>Cart Shop</strong>
+                                </li>
+                                <li [ngClass]="{ active: nameOfCategory == 'Personal' }" id="personal">
+                                    <strong>Personal</strong>
+                                </li>
+                                <li [ngClass]="{ active: nameOfCategory == 'Payment' }" id="payment">
+                                    <strong>Payment</strong>
+                                </li>
+                                <li [ngClass]="{ active: nameOfCategory == 'Finish' }" id="confirm">
+                                    <strong>Finish</strong>
+                                </li>
+                            </ul>
+                            <!-- fieldsets -->
+
+                            <fieldset *ngIf="nameOfCategory == 'Personal'">
+                                <form #PersonalInfo="ngForm" (ngSubmit)="onSubmit(PersonalInfo)">
+                                    <div class="form-card">
+                                        <h2 class="fs-title">Personal Information</h2>
+                                        <label>First Name</label>
+                                        <input type="text" ngModel name="fname" placeholder="{{ user.name }}" />
+                                        <input type="text" ngModel name="lname" placeholder="Last Name" />
+                                        <input type="text" ngModel name="phno" placeholder="Contact No." />
+                                        <input type="text" ngModel name="address" placeholder="Address" />
+                                        <label>Enter your password for security</label>
+                                        <input type="password" ngModel name="password" placeholder="password" required />
+                                    </div>
+                                    <input type="button" name="previous" class="previous action-button-previous" style="padding-right: 9%" value="Previous" routerLink="/cart" />
+                                    <input type="submit" name="next" class="next action-button" style="padding-right: 10%" value="Next Step" />
+                                </form>
+                            </fieldset>
+
+                            <!-- Payment -->
+                            <fieldset *ngIf="nameOfCategory == 'Payment'">
+                                <div class="form-card">
+                                    <h2 class="fs-title">Payment Information</h2>
+                                    <div class="radio-group">
+                                        <div class="radio" data-value="credit">
+                                            <img src="https://i.imgur.com/XzOzVHZ.jpg" width="200px" height="100px" />
+                                        </div>
+                                        <div class="radio" data-value="paypal">
+                                            <img src="https://i.imgur.com/jXjwZlj.jpg" width="200px" height="100px" />
+                                        </div>
+                                        <br />
+                                    </div>
+                                    <label class="pay">Card Holder Name*</label>
+                                    <input type="text" name="holdername" placeholder="" required />
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <label class="pay">Card Number*</label>
+                                            <input type="text" name="cardno" placeholder="" required />
+                                        </div>
+                                        <div class="col-3">
+                                            <label class="pay">CVC*</label>
+                                            <input type="password" name="cvcpwd" placeholder="***" required />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <label class="pay">Expiry Date*</label>
+                                        </div>
+
+                                        <div class="col-3">
+                                            <input type="month" class=".input.list-dt" id="year" name="expyear" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <form #checkout="ngForm" (ngSubmit)="onSubmit(checkout)">
+                                    <input type="button" name="previous" class="previous action-button-previous" style="padding-right: 9%" value="Previous" (click)="nextStep('Personal')" required />
+                                    <input type="submit" name="make_payment" class="next action-button" style="padding-right: 9%" value="Confirm" (click)="nextStep('Finish')" required />
+                                </form>
+                            </fieldset>
+
+                            <!-- Finish -->
+                            <fieldset>
+                                <div class="form-card" *ngIf="nameOfCategory == 'Finish'">
+                                    <h2 class="fs-title text-center">Success !</h2>
+                                    <br /><br />
+                                    <div class="row justify-content-center">
+                                        <div class="col-3">
+                                            <img src="https://img.icons8.com/color/96/000000/ok--v2.png" class="fit-image" />
+                                        </div>
+                                    </div>
+                                    <br /><br />
+                                    <div class="row justify-content-center">
+                                        <div class="col-7 text-center">
+                                            <h5>You have made the payment successfully</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

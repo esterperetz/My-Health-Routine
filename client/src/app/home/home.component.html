@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+<html>
+
+<head>
+    <title>Bootstrap Example</title>
+    <!-- <meta charset="utf-8" /> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container text-center" style="margin-bottom: 15%">
+            <br /><br /><br /><br /><br /><br />
+            <h1 style="font-family: Forte; font-size: 80px">My Health Routine</h1>
+            <p>Take Care of yourself {{ userConnected }}</p>
+            <p>
+                Our site offers you order product or add taking piil by clicking on add med
+            </p>
+        </div>
+        <div style="height: 100px" *ngIf="access == 1">
+            <app-bmi></app-bmi>
+        </div>
+    </div>
+
+    <br /><br /><br />
+    <!-- *ngIf="accessUser.access > 1" -->
+    <div class="row">
+        <div class="col-3" style="margin-top: 5%; margin-left: 5%; height: 300px">
+            <div style="border: 2px solid lightcoral; height: 300px" *ngIf="access > 1">
+                <h2 align="center " style="background-color: lightblue">Notes</h2>
+                <div class="info" *ngIf="lenProductSoldOut > 0">
+                    <br />
+                    <p style="font-size: 20px">
+                        {{ userState }} their is {{ lenProductSoldOut }} item about to be soldout
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <button type="button" class="btn btn-info" routerLink="/Calendear" style="margin-right: 17%; margin-left: 9.5%">
+          <img
+            src="https://img.icons8.com/external-bearicons-flat-bearicons/200/000000/external-Calendar-christmas-and-new-year-bearicons-flat-bearicons-4.png"
+          />
+          <br />
+          <span>Calender</span></button
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-info" routerLink="/Enter-Med">
+          <img
+            src="https://img.icons8.com/external-outline-satawat-anukul/200/000000/external-medical-madical-outline-outline-satawat-anukul-9.png "
+          />
+          <br />
+          <span>Enter Med</span>
+        </button>
+        </div>
+    </div>
+    <br /><br /><br />
+    <div class="container" style="margin-left: 35%">
+        <div class="row">
+            <button type="button " class="btn btn-info" routerLink="/Natural-products" style="margin-right: 15%">
+          <img
+            src="https://img.icons8.com/external-dreamstale-green-shadow-dreamstale/200/000000/external-shop-buildings-landmarks-dreamstale-green-shadow-dreamstale.png"
+          />
+          <br />
+          <span>Natural Shop</span>
+        </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button " class="btn btn-info" routerLink="/Search-For-A-Pharmacy">
+          <img
+            src="https://img.icons8.com/external-wanicon-two-tone-wanicon/150/000000/external-search-shopping-and-store-wanicon-two-tone-wanicon.png"
+          />
+          <br />
+          <span>Search for Pharmacy</span>
+        </button>
+        </div>
+    </div>
+    <app-about></app-about>
+    <app-footer></app-footer>
+</body>
+
+</html>

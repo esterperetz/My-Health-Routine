@@ -1,0 +1,205 @@
+<body>
+    <div id="container">
+        <div id="formcontainer">
+            <form #signUp="ngForm" (ngSubmit)="onSubmit(signUp)">
+                <p id="text">Sign Up to your Account</p>
+                <!-- email -->
+                <input id="email" type="email" ngModel name="email" type="tel" placeholder="Email" />
+                <!-- user name -->
+                <input id="username" type="text" ngModel name="name" placeholder="User name" />
+                <!-- password -->
+
+                <input id="password" type="password" ngModel name="password" #password="ngModel" minlength="8" placeholder="Password" />
+                <!-- phone -->
+
+                <input id="phone" type="tel" ngModel name="phone" placeholder="Phone" title="Please enter valid phone number" />
+                <!-- forget password -->
+                <a id="forget" href="#">Forget Password?</a
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!-- male / female -->
+        <br />
+        <input id="check" type="checkbox" value="male" />
+        <p id="text1">male</p>
+        <input
+          id="check"
+          type="checkbox"
+          style="top: -80px"
+          ngModel
+          value="female"
+          name="image"
+        />
+        <p id="text1" style="top: -110px">female</p>
+
+        <button id="signup" type="submit">Sign Up</button>
+        <hr id="hrline1" />
+        <p id="text2">already a Member?</p>
+        <hr id="hrline2" />
+        <button id="login" type="button" routerLink="/login">Log In</button>
+      </form>
+      <p id="text3"></p>
+    </div>
+  </div>
+</body>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Glassmorphism login Form Tutorial in html css</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+    <style></style>
+</head>
+
+<body>
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+    <form class="signup-form" #SingUp="ngForm" (ngSubmit)="onSubmit(SingUp)" style="border: solid #19a3c6; padding-bottom: 30%; padding-top: 0.5%">
+        <div style="border: #1845ad">
+            <a style="margin-right: 40%; font-size: 150%; color: white" class="sign-up active" routerLink="/login">Log In</a
+        >
+
+        <a
+          style="
+            font-size: 150%;
+            color: white;
+            text-decoration-line: underline;
+            text-decoration-color: rgba(81, 195, 184, 1);
+          "
+          >Sign Up</a
+        >
+      </div>
+      <br />
+      <input type="text" class="input" placeholder="name" ngModel name="name" />
+      <input
+        type="text"
+        class="input"
+        autocomplete="off"
+        placeholder="Useremail"
+        ngModel
+        required
+        name="email"
+        #email="ngModel"
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$"
+      />
+      <small
+        class="pass"
+        *ngIf="!email?.valid && (email?.dirty || email?.touched)"
+        style="
+          color: white;
+          text-shadow: 2px 2px #ff0000;
+          margin-left: 4%;
+          font-weight: bolder 100;
+          font-size: 20px;
+        "
+        >Invalid Email</small
+      >
+      <input
+        type="password"
+        class="input"
+        autocomplete="off"
+        placeholder="Password"
+        ngModel
+        name="password"
+        #password="ngModel"
+        minlength="8"
+        required
+      />
+      <small
+        class="pass"
+        *ngIf="!password?.valid && (password?.dirty || password?.touched)"
+        style="
+          color: white;
+          text-shadow: 2px 2px #ff0000;
+          margin-left: 5%;
+          font-weight: bolder 100;
+          font-size: 20px;
+
+          border-radius: 10%;
+        "
+        >Invalid password</small
+      >
+      <div class="row" style="margin-left: 0.5%">
+        <div>
+          <select
+            class="w-full text-2xl rounded-lg"
+            style="height: 180%; margin-top: 15%"
+            (change)="getPhone($event)"
+          >
+            <option>055</option>
+            <option>052</option>
+            <option>053</option>
+            <option>058</option>
+            <option>054</option>
+          </select>
+        </div>
+
+        <div className="col">
+          <div style="height: 90%; width: 100%; margin-left: 5%">
+            <input
+              style="height: 200%; width: 100%"
+              type="tel"
+              class="input"
+              placeholder="Phone"
+              ngModel
+              name="phone"
+              class="w-full text-2xl rounded-lg"
+              #phone="ngModel"
+              minlength="7"
+            />
+          </div>
+        </div>
+      </div>
+      <br /><br />
+      <small
+        class="pass"
+        *ngIf="!phone?.valid && (phone?.dirty || phone?.touched)"
+        style="
+          color: white;
+          text-shadow: 2px 2px #ff0000;
+          margin-left: 10%;
+          font-weight: bolder 100;
+          font-size: 20px;
+          border-radius: 10%;
+          border: solid;
+        "
+        >Invalid phone number</small
+      >
+      <label style="font-size: 15px; float: left">
+        <input
+          type="radio"
+          style="width: 35%"
+          ngModel
+          name="image"
+          value="male"
+          required
+        />&nbsp;&nbsp;Male</label
+      >
+
+      <label style="font-size: 15px; margin-right: 40%; float: left">
+        <input
+          type="radio"
+          style="width: 25%; margin-right: 20%"
+          ngModel
+          name="image"
+          value="male"
+          required
+        />&nbsp;&nbsp;&nbsp;Female</label
+      >
+      <button
+        type="button "
+        class="btn btn-outline-primary"
+        style="border: #92b3ff solid; color: #080710"
+      >
+        submit
+      </button>
+    </form>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </body>
+</html> -->
