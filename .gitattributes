@@ -1,3 +1,7 @@
+*.ts linguist-detectable=true
+*.js linguist-detectable=true
 *.html linguist-detectable=false
 *.css linguist-detectable=false
-*.ts linguist-detectable=true
+*.scss linguist-detectable=false
+dist/* linguist-vendored
+vendor/* linguist-vendored
